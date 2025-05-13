@@ -135,14 +135,14 @@ main,
 .intro-logo {
     width: min(200px, 80%);
     margin-bottom: var(--spacing-md);
-}
+    }
 
-.intro h2 {
+    .intro h2 {
     font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: var(--spacing-sm);
-}
+    }
 
-.intro p {
+    .intro p {
     margin-bottom: var(--spacing-sm);
     max-width: 800px;
     margin-left: auto;
@@ -269,16 +269,16 @@ footer {
     .navbar {
         padding: var(--spacing-sm) 0;
     }
-    
+
     .contact-form {
         width: 95%;
         padding: var(--spacing-sm);
     }
-    
+
     .gallery-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-}
+    }
 
 @media (max-width: 480px) {
     .navbar {
@@ -303,12 +303,12 @@ footer {
     .contact-form {
         display: none;
     }
-    
+
     body {
         background: white;
         color: black;
     }
-    
+
     .contact-section {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);

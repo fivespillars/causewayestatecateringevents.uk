@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 const initializeWebsite = () => {
     setActiveNavLink();
-    initContactForm();
+        initContactForm();
     initSmoothScroll();
     initMobileNavigation();
 };
@@ -52,7 +52,7 @@ const initContactForm = () => {
     const validateEmail = (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
-
+    
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -70,14 +70,14 @@ const initContactForm = () => {
             showMessage('error', 'Please enter a valid email address');
             return;
         }
-
+        
         try {
-            // Here you would typically send the form data to a server
+        // Here you would typically send the form data to a server
             // For now, we'll simulate a successful submission
             await new Promise(resolve => setTimeout(resolve, 1000));
-            
+        
             showMessage('success', 'Thank you for your message! We will get back to you soon.');
-            form.reset();
+        form.reset();
         } catch (error) {
             console.error('Form submission error:', error);
             showMessage('error', 'Sorry, there was an error sending your message. Please try again later.');
@@ -144,7 +144,7 @@ const closeMobileMenu = () => {
     if (navbar?.classList.contains('active')) {
         navbar.classList.remove('active');
         mobileMenuButton?.setAttribute('aria-expanded', 'false');
-    }
+            }
 };
 
 // Add page load performance tracking
