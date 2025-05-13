@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Security headers -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
+    
+    <!-- SEO meta tags -->
+    <meta name="description" content="The Causeway Estate Catering website is currently under construction. We'll be back soon!">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://causewaycateringevents.uk/construction">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    
+    <!-- Social media meta tags -->
+    <meta property="og:url" content="https://causewaycateringevents.uk/construction">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Causeway Estate Catering - Coming Soon">
+    <meta property="og:description" content="The Causeway Estate Catering website is currently under construction. We'll be back soon!">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" as="style">
+    <link rel="preload" href="images/causeway-estate-home-banner.png" as="image">
+    <link rel="preload" href="images/the-causeway-estate-logo.png" as="image">
+    
+    <title>Under Construction - The Causeway Estate Catering</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+
+        :root {
+            --gradient-start: #123946;
+            --gradient-end: #1a5468;
+            --overlay-bg: rgba(18, 57, 70, 0.95);
+            --text-color: #fff;
+            --transition-speed: 0.3s;
+        }
+
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--text-color);
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('images/causeway-estate-home-banner.png') center/cover;
+            opacity: 0.1;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .construction-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+            background: var(--overlay-bg);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: brightness(0) invert(1); /* Make logo white */
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .subtitle {font-size: clamp(1rem, 3vw, 1.2rem); margin-bottom: 2rem; font-style: italic;}
+        .message {font-size: clamp(1rem, 2.5vw, 1.1rem); margin-bottom: 2rem; line-height: 1.8;}
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info p {margin: 0.5rem 0;}
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity var(--transition-speed) ease;
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            opacity: 0.8;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            text-decoration: none;
+        }
+
+        .social-links img {
+            width: 48px;
+            height: 48px;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .social-links img:hover {transform: scale(1.1);}
+
+        .estimated-time {
+            margin-top: 2rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .construction-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            .social-links img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .social-links img {transition: none;}
+            .contact-info a {transition: none;}
+        }
+    </style>
+</head>
+<body>
+    <div class="construction-container">
+        <img src="images/the-causeway-estate-logo.png" alt="The Causeway Estate Logo" class="logo">
+        <h1>Under Construction</h1>
+        <p class="subtitle">Something amazing is being built</p>
+        
+        <div class="message">
+            <p>We are currently building a new website to better serve you. Our team is working hard to create an exceptional online experience for The Causeway Estate Catering.</p>
+            <p>Thank you for your patience during this time and please ensure that you give us a call for any enquiries.</p>
+        </div>
+        
+        <div class="contact-info">
+            <p>Meanwhile, you can reach us at:</p>
+            <p>📞 <a href="tel:+441432265000">01432 265 000</a></p>
+            <p>📧 <a href="mailto:hello@causewayestate.com">hello@causewayestate.com</a></p>
+            <p>📍 Herefordshire Golf Club, The Causeway, Hereford, HR1 1DF</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/TheCausewayRestaurant" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                <img src="images/facebook-icon.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/thecausewayestate" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                <img src="images/instagram-icon.svg" alt="Instagram">
+            </a>
+        </div>
+        
+        <p class="estimated-time">Coming Soon!</p>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Host your special event at The Causeway Cafe & Bar. Perfect venue for celebrations, corporate events, and golf society days.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <title>Events - The Causeway Cafe & Bar</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Include header component -->
+    <div include-html="components/header.html"></div>
+
+    <!-- Hero section -->
+    <section class="hero-image" role="banner">
+        <div class="hero-content">
+            <h1>Special Events</h1>
+            <p class="established">Create Lasting Memories</p>
+        </div>
+    </section>
+
+    <!-- Introduction section -->
+    <section class="intro" role="region" aria-labelledby="intro-heading">
+        <h2 id="intro-heading">Your Perfect Venue</h2>
+        <p>Set against the stunning backdrop of Herefordshire Golf Club, our venue offers the perfect setting for your special occasions. Whether you're planning a corporate event, celebration, or golf society day, our dedicated team ensures every detail is perfect.</p>
+    </section>
+
+    <!-- Event types section -->
+    <section class="info" role="region" aria-labelledby="events-heading">
+        <h2 id="events-heading">Event Types</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>Private Celebrations</h3>
+                <p>Make your special day memorable with our elegant venue and personalized service. Perfect for birthdays, anniversaries, retirement parties, and family gatherings.</p>
+            </div>
+            <div class="info-item">
+                <h3>Corporate Functions</h3>
+                <p>Host professional events in our well-equipped spaces. Ideal for business meetings, team building days, and corporate celebrations with full audiovisual capabilities.</p>
+            </div>
+            <div class="info-item">
+                <h3>Golf Society Events</h3>
+                <p>Organize memorable golf days with our comprehensive packages including course access, catering, and presentation facilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include footer component -->
+    <div include-html="components/footer.html"></div>
+
+    <!-- Scripts -->
+    <script src="components/include.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html> 

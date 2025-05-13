@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about The Causeway Cafe & Bar at Herefordshire Golf Club - our history, values, and commitment to excellence.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <title>About - The Causeway Cafe & Bar</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Include header component -->
+    <div include-html="components/header.html"></div>
+
+    <!-- Hero section -->
+    <section class="hero-image" role="banner">
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p class="established">EST. 1932</p>
+        </div>
+    </section>
+
+    <!-- Introduction section -->
+    <section class="intro" role="region" aria-labelledby="intro-heading">
+        <h2 id="intro-heading">Welcome to The Causeway</h2>
+        <p>Located in the heart of Herefordshire Golf Club, The Causeway Cafe & Bar has been a cornerstone of the community since 1932. Our establishment combines rich heritage with modern hospitality, offering a welcoming atmosphere for both golfers and visitors alike.</p>
+    </section>
+
+    <!-- Info section -->
+    <section class="info" role="region" aria-labelledby="values-heading">
+        <h2 id="values-heading">Our Values</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>Quality</h3>
+                <p>We pride ourselves on serving fresh, locally-sourced ingredients prepared with care and attention to detail.</p>
+            </div>
+            <div class="info-item">
+                <h3>Tradition</h3>
+                <p>With over 90 years of history, we maintain the highest standards while embracing modern culinary trends.</p>
+            </div>
+            <div class="info-item">
+                <h3>Community</h3>
+                <p>We're more than just a cafe - we're a gathering place for the local community and golf club members.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include footer component -->
+    <div include-html="components/footer.html"></div>
+
+    <!-- Scripts -->
+    <script src="components/include.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html> 
