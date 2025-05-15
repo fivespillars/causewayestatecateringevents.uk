@@ -15,8 +15,8 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="construction-page/images/the-causeway-estate-logo.png">
-    <link rel="apple-touch-icon" href="construction-page/images/the-causeway-estate-logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/the-causeway-estate-logo.png">
+    <link rel="apple-touch-icon" href="images/the-causeway-estate-logo.png">
     
     <!-- Social media meta tags -->
     <meta property="og:url" content="https://causewaycateringevents.uk">
@@ -26,8 +26,8 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" as="style">
-    <link rel="preload" href="construction-page/images/causeway-estate-home-banner.png" as="image">
-    <link rel="preload" href="construction-page/images/the-causeway-estate-logo.png" as="image">
+    <link rel="preload" href="images/causeway-estate-home-banner.png" as="image">
+    <link rel="preload" href="images/the-causeway-estate-logo.png" as="image">
     
     <title>Under Construction - The Causeway Estate Catering</title>
     
@@ -59,10 +59,11 @@
         }
 
         body::before {
+            /* Responsive background image for all devices */
             content: '';
             position: fixed;
             inset: 0;
-            background: url('construction-page/images/causeway-estate-home-banner.png') center/cover;
+            background: url('images/causeway-estate-home-banner.png') center/cover;
             opacity: 0.1;
             z-index: -1;
             pointer-events: none;
@@ -71,7 +72,7 @@
         .construction-container {
             width: 100%;
             max-width: 800px;
-            padding: 2rem;
+            padding: clamp(1rem, 4vw, 2rem);
             background: var(--overlay-bg);
             border-radius: 10px;
             backdrop-filter: blur(10px);
@@ -79,10 +80,11 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
+            margin: auto;
         }
 
         .logo {
-            width: 150px;
+            width: min(150px, 40vw);
             height: auto;
             margin-bottom: 2rem;
             filter: brightness(0) invert(1); /* Make logo white */
@@ -132,8 +134,8 @@
         }
 
         .social-links img {
-            width: 48px;
-            height: 48px;
+            width: min(48px, 12vw);
+            height: auto;
             transition: transform var(--transition-speed) ease;
         }
 
@@ -145,14 +147,25 @@
             opacity: 0.8;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .construction-container {
-                padding: 1.5rem;
-                margin: 1rem;
+                padding: 1rem;
+                margin: 0.5rem;
+            }
+            .logo {
+                width: min(100px, 60vw);
+            }
+            .social-links {
+                gap: 1rem;
             }
             .social-links img {
-                width: 40px;
-                height: 40px;
+                width: min(36px, 16vw);
+            }
+            h1 {
+                font-size: clamp(1.2rem, 7vw, 2rem);
+            }
+            .subtitle, .message, .contact-info, .estimated-time {
+                font-size: 1rem;
             }
         }
 
@@ -164,7 +177,8 @@
 </head>
 <body>
     <div class="construction-container">
-        <img src="construction-page/images/the-causeway-estate-logo.png" alt="The Causeway Estate Logo" class="logo">
+        <!-- Logo is responsive and uses the correct path -->
+        <img src="images/the-causeway-estate-logo.png" alt="The Causeway Estate Logo" class="logo">
         <h1>Under Construction</h1>
         <p class="subtitle">Something amazing is being built</p>
         
@@ -181,11 +195,12 @@
         </div>
         
         <div class="social-links">
+            <!-- Social icons are responsive and use the correct path -->
             <a href="https://www.facebook.com/TheCausewayRestaurant" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
-                <img src="construction-page/images/facebook-icon.svg" alt="Facebook">
+                <img src="images/facebook-icon.svg" alt="Facebook">
             </a>
             <a href="https://www.instagram.com/thecausewayestate" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
-                <img src="construction-page/images/instagram-icon.svg" alt="Instagram">
+                <img src="images/instagram-icon.svg" alt="Instagram">
             </a>
         </div>
         

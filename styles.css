@@ -80,9 +80,14 @@ main,
     letter-spacing: 0.1em;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.navbar a:hover {
     text-decoration: underline;
+}
+
+/* Active Navigation Link */
+.navbar a.active {
+    border-bottom: 1px solid var(--color-text);
+    text-decoration: none; /* Prevent double underline */
 }
 
 /* ==========================================================================
@@ -617,11 +622,6 @@ footer {
 .submit-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Active Navigation Link */
-.navbar a.active {
-    border-bottom: 1px solid var(--color-text);
 }
 
 /* Page-specific Hero Adjustments */
