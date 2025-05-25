@@ -1845,29 +1845,40 @@ body.contact-page {
   }
 }
 
-.hamburger-menu {
-    display: none;
-}
+/* Hamburger menu should be hidden by default */
+.hamburger-menu { display: none; }
 
+/* Show hamburger menu and hide navbar on mobile */
 @media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-    .hamburger-menu {
-        display: block;
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-    .hamburger-menu span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px 0;
-        background-color: #fff;
-    }
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: var(--color-primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: auto;
+  }
+  .navbar.active {
+    display: flex;
+  }
+  .hamburger-menu {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #fff;
+  }
 } 
