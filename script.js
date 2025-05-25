@@ -154,4 +154,13 @@ window.addEventListener('load', () => {
         const pageLoadTime = timing.loadEventEnd - timing.navigationStart;
         console.log(`Page load time: ${pageLoadTime}ms`);
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navbar = document.querySelector('.navbar');
+
+  hamburgerMenu.addEventListener('click', function() {
+    navbar.style.display = navbar.style.display === 'none' ? 'flex' : 'none';
+  });
 }); 
