@@ -1881,4 +1881,11 @@ body.contact-page {
     margin: 5px 0;
     background-color: #fff;
   }
+}
+
+/* Ensure mobile navbar always shows when active */
+@media (max-width: 768px) {
+  .navbar.active {
+    display: flex !important;
+  }
 } 
