@@ -5,17 +5,25 @@ on:
     branches:
       - main  # or master, depending on your default branch name
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install dependencies
         run: |
@@ -24,18 +32,20 @@ jobs:
 
       - name: Minify HTML
         run: |
-          for file in *.html; do
-            html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true "$file" -o "$file"
-          done
+          find . -name "*.html" -type f -exec html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true {} -o {} \;
 
       - name: Minify CSS
         run: |
-          cleancss -o styles.min.css styles.css
+          find . -name "*.css" -type f -exec cleancss -o {}.min {} \;
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        id: deployment
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
           publish_branch: gh-pages
-          commit_message: "Deploy: ${{ github.event.head_commit.message }}" 
+          commit_message: "Deploy: ${{ github.event.head_commit.message }}"
+          enable_jekyll: false
+          force_orphan: true
+          keep_files: false 
