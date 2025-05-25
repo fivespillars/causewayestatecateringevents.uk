@@ -380,7 +380,27 @@ footer {
     .gallery-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+    .navbar {
+        display: none;
     }
+    .hamburger-menu {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: #fff;
+    }
+}
 
 @media (max-width: 480px) {
     .navbar {
@@ -1823,4 +1843,31 @@ body.contact-page {
     max-width: 98vw;
     height: 220px;
   }
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: #fff;
+    }
 } 
