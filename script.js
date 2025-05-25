@@ -111,17 +111,13 @@ const initSmoothScroll = () => {
  * Mobile navigation handling
  */
 const initMobileNavigation = () => {
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navbar = document.querySelector('.navbar');
-    
-    if (!mobileMenuButton || !navbar) return;
-
-    mobileMenuButton.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-        const isExpanded = navbar.classList.contains('active');
-        mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+    if (!hamburgerMenu || !navbar) return;
+    hamburgerMenu.addEventListener('click', () => {
+        const isActive = navbar.classList.toggle('active');
+        hamburgerMenu.setAttribute('aria-expanded', isActive);
     });
-
     // Close menu on window resize (if switching to desktop view)
     let resizeTimer;
     window.addEventListener('resize', () => {
@@ -139,12 +135,11 @@ const initMobileNavigation = () => {
  */
 const closeMobileMenu = () => {
     const navbar = document.querySelector('.navbar');
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
     if (navbar?.classList.contains('active')) {
         navbar.classList.remove('active');
-        mobileMenuButton?.setAttribute('aria-expanded', 'false');
-            }
+        hamburgerMenu?.setAttribute('aria-expanded', 'false');
+    }
 };
 
 // Add page load performance tracking
