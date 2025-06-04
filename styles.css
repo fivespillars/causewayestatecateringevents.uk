@@ -1965,17 +1965,6 @@ body.contact-page {
   }
   .navbar.active {
     display: flex !important;
-    flex-direction: column;
-    background: var(--color-primary);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    height: auto;
-    width: 100vw;
-    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   }
   .hamburger-menu {
     display: block;
@@ -2074,4 +2063,185 @@ body.contact-page {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-} 
+}
+
+/* Page transition overlay */
+#page-transition {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #123946;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+#page-transition.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* =====================
+   MOBILE RESPONSIVENESS
+   ===================== */
+
+/* --- 900px and below: Stack grids, reduce padding --- */
+@media (max-width: 900px) {
+  /* Stack info and menu grids vertically */
+  .info-grid, .catering-grid, .menu-grid, .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .intro, .info, .about-chef, .contact-section, .catering-section, .main-content {
+    padding: 1.5rem 0.5rem;
+    margin: 1.2rem auto;
+    max-width: 98vw;
+    min-width: 0;
+  }
+}
+
+/* --- 768px and below: Navbar, hero, and footer adjustments --- */
+@media (max-width: 768px) {
+  /* Navbar becomes hamburger, footer stacks columns */
+  .navbar {
+    display: none !important;
+    flex-direction: column;
+    background: var(--color-primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: auto;
+    width: 100vw;
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .navbar.active {
+    display: flex !important;
+  }
+  .hamburger-menu {
+    display: block;
+    position: fixed;
+    top: 14px;
+    right: 10px;
+    z-index: 1101;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #fff;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    padding: 0;
+  }
+  .footer-col {
+    min-width: 0;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .footer-col h3 {
+    font-size: 1.1rem;
+  }
+  .footer-col ul li {
+    font-size: 1rem;
+  }
+  .footer-bottom {
+    font-size: 0.95rem;
+  }
+  .hero-image {
+    height: 40vh;
+    min-height: 180px;
+    margin-top: 50px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* --- 600px and below: Forms, cards, and logo --- */
+@media (max-width: 600px) {
+  /* Forms and cards full width, logo smaller */
+  .contact-form, .mini-contact-form, .review-form {
+    padding: 1rem 0.2rem;
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .info-item, .catering-item, .menu-item, .review-card {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+  .info-grid, .catering-grid, .menu-grid, .team-grid {
+    gap: 0.7rem;
+  }
+  .intro-logo {
+    width: 120px;
+  }
+}
+
+/* --- 480px and below: Tighten up everything --- */
+@media (max-width: 480px) {
+  .navbar {
+    font-size: 0.9rem;
+    gap: var(--spacing-sm);
+  }
+  .contact-section {
+    padding: var(--spacing-sm);
+  }
+  .footer-col h3 {
+    font-size: 1rem;
+  }
+  .footer-col ul li {
+    font-size: 0.95rem;
+  }
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+  .chef-photo {
+    max-width: 180px;
+  }
+  .menu-section, .intro, .info, .catering-section, .contact-form, .main-content {
+    padding: 0.5rem 0.1rem;
+    margin: 0.7rem auto;
+  }
+}
+
+/* --- 400px and below: Smallest screens --- */
+@media (max-width: 400px) {
+  .footer-col h3 {
+    font-size: 0.95rem;
+  }
+  .footer-col ul li {
+    font-size: 0.9rem;
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+  .intro-logo {
+    width: 80px;
+  }
+}
+
+/* --- Touch target improvements for mobile --- */
+@media (max-width: 600px) {
+  .footer-social a, .social-links a, .navbar a, .dropbtn {
+    padding: 0.7em 0.5em;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.1em;
+  }
+  .mini-contact-form button, .contact-form button, .submit-btn {
+    font-size: 1.1em;
+    padding: 1em 0;
+  }
+}
+
+/* --- Comment: All changes above are for mobile responsiveness and accessibility --- */ 

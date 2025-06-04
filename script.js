@@ -8,6 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Page loaded, initializing website...');
     initializeWebsite();
     loadFooter();
+    // Page transition effect for smooth navigation
+    const transition = document.getElementById('page-transition');
+    if (transition) {
+        transition.classList.remove('active');
+        document.querySelectorAll('a').forEach(link => {
+            // Only apply to internal links without target or download
+            if (
+                link.hostname === window.location.hostname &&
+                !link.hasAttribute('target') &&
+                !link.hasAttribute('download')
+            ) {
+                link.addEventListener('click', function(e) {
+                    // Ignore anchor links
+                    if (link.hash && link.pathname === window.location.pathname) return;
+                    e.preventDefault();
+                    transition.classList.add('active');
+                    setTimeout(() => {
+                        window.location = link.href;
+                    }, 400); // Match this to your CSS transition duration
+                });
+            }
+        });
+    }
 });
 
 /**
