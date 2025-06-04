@@ -5,15 +5,18 @@
 
 // Wait for the page to load
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Page loaded, initializing website...');
     initializeWebsite();
+    loadFooter();
 });
 
 /**
  * Initialize all website functionality
  */
 const initializeWebsite = () => {
+    console.log('Initializing website functionality...');
     setActiveNavLink();
-        initContactForm();
+    initAllForms();
     initSmoothScroll();
     initMobileNavigation();
 };
@@ -35,25 +38,29 @@ const setActiveNavLink = () => {
 };
 
 /**
- * Contact form initialization and handling
+ * Initialize all forms on the page
+ */
+const initAllForms = () => {
+    console.log('Initializing all forms...');
+    // No more JS for mini contact forms; let browser handle them natively
+    // Initialize main contact form
+    initContactForm();
+};
+
+/**
+ * Initialize main contact form
  */
 const initContactForm = () => {
     const form = document.getElementById('contactForm');
     if (!form) return;
-
-    const showMessage = (type, text) => {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${type}`;
-        messageDiv.textContent = text;
-        form.insertAdjacentElement('beforebegin', messageDiv);
-        setTimeout(() => messageDiv.remove(), 5000);
-    };
+    console.log('Initializing main contact form');
 
     const validateEmail = (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
     
     form.addEventListener('submit', async (e) => {
+        console.log('Main contact form submitted');
         e.preventDefault();
         
         // Get and sanitize form values
@@ -62,12 +69,12 @@ const initContactForm = () => {
         
         // Validate form data
         if (!data.name?.trim() || !data.email?.trim() || !data.message?.trim()) {
-            showMessage('error', 'Please fill in all fields');
+            console.log('Form validation failed - missing fields');
             return;
         }
 
         if (!validateEmail(data.email)) {
-            showMessage('error', 'Please enter a valid email address');
+            console.log('Form validation failed - invalid email');
             return;
         }
         
@@ -76,13 +83,21 @@ const initContactForm = () => {
             // For now, we'll simulate a successful submission
             await new Promise(resolve => setTimeout(resolve, 1000));
         
-            showMessage('success', 'Thank you for your message! We will get back to you soon.');
+            showThankYouPopup('Your message has been sent successfully. We\'ll get back to you soon.');
         form.reset();
         } catch (error) {
             console.error('Form submission error:', error);
-            showMessage('error', 'Sorry, there was an error sending your message. Please try again later.');
         }
     });
+};
+
+// Add to global scope for the onclick handler
+window.closeThankYouPopup = () => {
+    console.log('Closing thank you popup');
+    const overlay = document.querySelector('.thank-you-overlay');
+    const popup = document.querySelector('.thank-you-popup');
+    if (overlay) overlay.classList.remove('active');
+    if (popup) popup.classList.remove('active');
 };
 
 /**
@@ -147,6 +162,16 @@ window.addEventListener('load', () => {
     if (window.performance) {
         const timing = window.performance.timing;
         const pageLoadTime = timing.loadEventEnd - timing.navigationStart;
-        console.log(`Page load time: ${pageLoadTime}ms`);
     }
-}); 
+});
+
+// Load footer component
+async function loadFooter() {
+    try {
+        const response = await fetch('components/footer.html');
+        const html = await response.text();
+        document.querySelector('footer').outerHTML = html;
+    } catch (error) {
+        console.error('Error loading footer:', error);
+            }
+} 

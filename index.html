@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Include common meta tags -->
+    <!--#include file="components/meta.html" -->
+    
+    <!-- Page specific meta tags -->
+    <meta name="description" content="Welcome to The Causeway Cafe & Bar at Herefordshire Golf Club. Enjoy fresh, locally sourced food in a beautiful setting.">
+    <title>The Causeway Cafe & Bar</title>
     <!-- Basic meta tags for character set and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to The Causeway Estate Catering at Herefordshire Golf Club. Experience exceptional dining, events, and catering services in our historic venue with stunning views.">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="Causeway Estate, Herefordshire Golf Club, catering, events, dining, restaurant">
     <!-- Enhanced security headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com https://maps.google.com; form-action https://formspree.io;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io;">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
@@ -32,7 +37,6 @@
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" as="style">
     <link rel="preload" href="images/causeway-estate-home-banner.png" as="image" fetchpriority="high">
-    <title>The Causeway Estate Catering - Exceptional Dining & Events in Herefordshire</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
@@ -109,8 +113,10 @@
           <div class="review-name">– Lina M.</div>
         </div>
       </div>
-      <form class="review-form" action="https://formspree.io/f/mldbkjpq" method="POST" autocomplete="off">
-        <input type="hidden" name="_next" value="https://www.causewaycateringevents.uk/thank-you.html">
+      <form class="review-form" action="https://formspree.io/f/mldbkjpq" method="POST">
+        <input type="hidden" name="_subject" value="New Review Submission">
+        <input type="hidden" name="_next" value="thank-you.html?form=review">
+        <input type="hidden" name="_autoresponse" value="Thank you for your review! We appreciate your feedback and will review it shortly.">
         <h3>Share Your Experience</h3>
         <input type="text" name="name" placeholder="Your Name" required maxlength="50" aria-label="Name">
         <div class="star-rating" aria-label="Star rating">
@@ -155,27 +161,45 @@
         </div>
         <div class="footer-col">
           <h3>Contact</h3>
-          <ul>
-            <li><a href="contact.html">Contact Form</a></li>
-            <li>Email: <a href="mailto:elaijah@causewayestate.com">elaijah@causewayestate.com</a></li>
-            <li>Herefordshire Golf Club, Hereford, UK</li>
-          </ul>
+          <div class="contact-info">
+            <div class="info-grid">
+              <div class="info-item">
+                <img src="images/email-icon.svg" alt="Email" loading="lazy" width="24" height="24">
+                <a href="mailto:ilaitiar@causewayestate.com">ilaitiar@causewayestate.com</a>
+              </div>
+              <div class="info-item">
+                <img src="images/phone-icon.svg" alt="Phone" loading="lazy" width="24" height="24">
+                <a href="tel:+60123456789">+60 12 345 6789</a>
+              </div>
+              <div class="info-item">
+                <img src="images/location-icon.svg" alt="Location" loading="lazy" width="24" height="24">
+                <span>123 Causeway Street, Singapore</span>
+              </div>
+              <div class="info-item">
+                <img src="images/clock-icon.svg" alt="Opening Hours" loading="lazy" width="24" height="24">
+                <span>Mon - Fri: 9AM - 6PM</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="footer-col">
           <h3>Opening Hours</h3>
           <ul>
-            <li>Saturday 10 am–4 pm</li>
-            <li>Sunday 10 am–3 pm</li>
-            <li>Monday 10 am–4 pm</li>
-            <li>Tuesday 10 am–4 pm</li>
-            <li>Wednesday 10 am–4 pm</li>
-            <li>Thursday 10 am–4 pm</li>
-            <li>Friday 10 am–4 pm</li>
+            <li>Monday 9 am–4 pm</li>
+            <li>Tuesday 9 am–4 pm</li>
+            <li>Wednesday 9 am–4 pm</li>
+            <li>Thursday 9 am–4 pm</li>
+            <li>Friday 9 am–4 pm</li>
+            <li>Saturday 9 am–4 pm</li>
+            <li>Sunday 9 am–4 pm</li>
           </ul>
         </div>
         <div class="footer-col footer-contact-form">
           <h3>Quick Contact</h3>
-          <form class="mini-contact-form" action="https://formspree.io/f/xldbzeja" method="POST" autocomplete="off">
+          <form class="mini-contact-form" action="https://formspree.io/f/mpwdveyr" method="POST" autocomplete="off">
+            <input type="hidden" name="_subject" value="New Quick Contact Form Submission">
+            <input type="hidden" name="_next" value="/thank-you.html?form=quick">
+            <input type="hidden" name="_autoresponse" value="Thank you for your quick message. We have received it and will respond within 24 hours.">
             <div class="honeypot">
               <label class="visually-hidden" for="footer-website-index">Leave this field empty:</label>
               <input type="text" name="website" id="footer-website-index" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -193,5 +217,41 @@
     </footer>
     <!-- Load main JavaScript for interactivity -->
     <script src="script.js"></script>
+    <script>
+      // Handle review form submission
+      document.getElementById('reviewForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show confirmation message
+        const confirmation = document.getElementById('reviewConfirmation');
+        confirmation.style.display = 'block';
+        
+        // Submit the form
+        fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            // Clear the form
+            this.reset();
+            // Redirect after a short delay
+            setTimeout(() => {
+              window.location.href = '/thank-you.html?form=review';
+            }, 2000);
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          confirmation.textContent = 'Sorry, there was an error submitting your review. Please try again.';
+          confirmation.style.backgroundColor = '#f44336';
+        });
+      });
+    </script>
 </body>
 </html> 
