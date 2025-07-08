@@ -1,0 +1,21 @@
+{
+    "name": "The Causeway Estate Catering",
+    "short_name": "Causeway Estate",
+    "description": "Premier catering and events venue in Herefordshire",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#123946",
+    "theme_color": "#123946",
+    "icons": [
+        {
+            "src": "images/the-causeway-estate-logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/the-causeway-estate-logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+} 
